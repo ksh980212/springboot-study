@@ -18,6 +18,10 @@ repositories {
     mavenCentral()
 }
 
+sourceSets.test {
+    resources.srcDirs = ["src/test/resources"]
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
