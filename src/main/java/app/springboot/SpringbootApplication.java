@@ -13,4 +13,8 @@ public class SpringbootApplication {
 		app.run(args);
 	}
 
+	/**
+	 * --debug or -Ddebug
+	 */
+
 }
