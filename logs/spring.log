@@ -2085,3 +2085,10 @@ Unconditional classes:
 2020-04-05 21:39:43.821 DEBUG 31560 --- [main] app.springboot.SpringRunner              : ================
 2020-04-05 21:39:43.821 DEBUG 31560 --- [main] app.springboot.SpringRunner              : This is Spring Boot App
 2020-04-05 21:39:43.821 DEBUG 31560 --- [main] app.springboot.SpringRunner              : ================
+2020-04-05 21:46:46.572  INFO 8120 --- [main] app.springboot.SpringbootApplication     : Starting SpringbootApplication on DESKTOP-OAAKU2I with PID 8120 (C:\Users\ksh98\Desktop\flexpace\springboot\build\classes\java\main started by ksh98 in C:\Users\ksh98\Desktop\flexpace\springboot)
+2020-04-05 21:46:46.574 DEBUG 8120 --- [main] app.springboot.SpringbootApplication     : Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-04-05 21:46:46.574  INFO 8120 --- [main] app.springboot.SpringbootApplication     : No active profile set, falling back to default profiles: default
+2020-04-05 21:46:47.041  INFO 8120 --- [main] app.springboot.SpringbootApplication     : Started SpringbootApplication in 0.825 seconds (JVM running for 1.669)
+2020-04-05 21:46:47.041 DEBUG 8120 --- [main] app.springboot.SpringRunner              : ================
+2020-04-05 21:46:47.042 DEBUG 8120 --- [main] app.springboot.SpringRunner              : This is Spring Boot App
+2020-04-05 21:46:47.042 DEBUG 8120 --- [main] app.springboot.SpringRunner              : ================
