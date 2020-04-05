@@ -17,6 +17,7 @@ public class SampleRunner implements ApplicationRunner {
 		System.out.println(springProperties.getName());
 		System.out.println(springProperties.getAge());
 		System.out.println(springProperties.getFullName());
+		System.out.println(springProperties.getSessionTimeout());
 		System.out.println("================");
 	}
 
