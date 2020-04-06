@@ -5,9 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.test.web.reactive.server.WebTestClient;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -15,7 +14,7 @@ import static org.mockito.Mockito.when;
 public class SampleControllerTest {
 
 	@Autowired
-	private TestRestTemplate testRestTemplate;
+	private WebTestClient webTestClient; // 비동기로 동작됨.
 
 	@MockBean
 	private SampleService mockSampleService;
@@ -24,11 +23,9 @@ public class SampleControllerTest {
 	public void hello() throws Exception {
 		when(mockSampleService.getName()).thenReturn("whiteship");
 
-		String result = testRestTemplate.getForObject("/hello", String.class);
-		assertThat(result).isEqualTo("hello whiteship");
+		webTestClient.get().uri("/hello").exchange()
+				.expectStatus().isOk()
+				.expectBody(String.class).isEqualTo("hello whiteship");
 	}
 
-	/**
-	 * 컨트롤러만 분리해서 테스트하고 싶다 => MockBean
-	 */
 }
