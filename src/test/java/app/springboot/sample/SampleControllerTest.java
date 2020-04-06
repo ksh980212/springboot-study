@@ -21,4 +21,7 @@ public class SampleControllerTest {
 		assertThat(result).isEqualTo("hello seungho");
 	}
 
+	/**
+	 * 이 상황에서는 테스트가 서비스 단까지 가게된다.
+	 */
 }
