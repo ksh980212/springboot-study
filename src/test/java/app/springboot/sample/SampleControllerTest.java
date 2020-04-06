@@ -4,26 +4,21 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK) // MOCK, RANDOM_PORT(실제 서블넷 컨테이너가 뜸 => 테스트용 RestTemplate 사용해야함)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 public class SampleControllerTest {
 
 	@Autowired
-	private MockMvc mockMvc;
+	private TestRestTemplate testRestTemplate;
 
 	@Test
 	public void hello() throws Exception {
-		mockMvc.perform(get("/hello"))
-				.andExpect(status().isOk())
-				.andExpect(content().string("hello seungho"))
-				.andDo(print());
+		String result = testRestTemplate.getForObject("/hello", String.class);
+		assertThat(result).isEqualTo("hello seungho");
 	}
 
 }
