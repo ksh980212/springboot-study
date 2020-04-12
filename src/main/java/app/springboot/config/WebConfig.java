@@ -18,4 +18,8 @@ public class WebConfig implements WebMvcConfigurer {
 				.setCachePeriod(20);
 	}
 
+	/**
+	 * Web JAR
+	 * jquery, react, view, angular등 JAR파일로 추가할 수 있다.
+	 */
 }

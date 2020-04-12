@@ -25,6 +25,15 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    /**
+     * jquery webJars
+     */
+    compile group: 'org.webjars.bower', name: 'jquery', version: '3.4.1'
+    /**
+     * version 알아서 처리
+     */
+    compile group: 'org.webjars', name: 'webjars-locator-core', version: '0.44'
+
 }
 
 test {
