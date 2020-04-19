@@ -17,17 +17,10 @@ public class HomeControllerTest {
 	private MockMvc mockMvc;
 
 	@Test
-	@WithMockUser
 	void hello() throws Exception {
 		mockMvc.perform(get("/hello"))
 				.andExpect(status().isOk())
 				.andExpect(view().name("hello"));
-	}
-
-	@Test
-	void hello_without_user() throws Exception {
-		mockMvc.perform(get("/hello"))
-				.andExpect(status().isUnauthorized());
 	}
 
 	@Test
